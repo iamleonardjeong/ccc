@@ -4,16 +4,19 @@ import beethoven from '../images/beethoven.svg';
 import hoon from '../images/hoon.svg';
 import gogh from '../images/gogh.svg';
 import picasso from '../images/picasso.svg';
+import diterRams from '../images/dieter_rams.svg';
 
 const SELECT_ALL = 'creator/SELECT_ALL';
 const SELECT_MUSICIAN = 'creator/SELECT_MUSICIAN';
 const SELECT_DEVELOPER = 'creator/SELECT_DEVELOPER';
 const SELECT_PAINTER = 'creator/SELECT_PAINTER';
+const SELECT_DESIGNER = 'creator/SELECT_DESIGNER';
 
 export const selectAll = createAction(SELECT_ALL);
 export const selectMusician = createAction(SELECT_MUSICIAN);
 export const selectDeveloper = createAction(SELECT_DEVELOPER);
 export const selectPainter = createAction(SELECT_PAINTER);
+export const selectDesigner = createAction(SELECT_DESIGNER);
 
 const states = [
   { id: 1, name: 'Hoon Jeong', category: 'Developer', portrait: hoon },
@@ -21,6 +24,7 @@ const states = [
   { id: 3, name: 'Beethoven', category: 'Musician', portrait: beethoven },
   { id: 4, name: 'Gogh', category: 'Painter', portrait: gogh },
   { id: 5, name: 'Picasso', category: 'Painter', portrait: picasso },
+  { id: 6, name: 'Dieter Rams', category: 'Designer', portrait: diterRams },
 ];
 
 const initialState = [
@@ -29,6 +33,7 @@ const initialState = [
   { id: 3, name: 'Beethoven', category: 'Musician', portrait: beethoven },
   { id: 4, name: 'Gogh', category: 'Painter', portrait: gogh },
   { id: 5, name: 'Picasso', category: 'Painter', portrait: picasso },
+  { id: 6, name: 'Dieter Rams', category: 'Designer', portrait: diterRams },
 ];
 
 const creator = handleActions(
@@ -40,6 +45,8 @@ const creator = handleActions(
       states.filter((creator) => creator.category === 'Developer'),
     [SELECT_PAINTER]: (state) =>
       states.filter((creator) => creator.category === 'Painter'),
+    [SELECT_DESIGNER]: (state) =>
+      states.filter((creator) => creator.category === 'Designer'),
   },
   initialState,
 );
