@@ -97,8 +97,11 @@ const Creator = ({ name, category, portrait }) => {
       clearInterval(closeId);
       clearInterval(openId);
     };
-  });
+  }, []);
 
+  if (!portrait) {
+    return;
+  }
   return (
     <CreatorWrap>
       <h1>{name}</h1>
