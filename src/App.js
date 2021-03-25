@@ -45,6 +45,13 @@ const Header = styled.header`
     `};
 `;
 
+const Footer = styled.footer`
+  padding-bottom: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
 const App = () => {
   const [scrollY, setScrollY] = useState(0);
   const [hideheader, setHideheader] = useState(false);
@@ -73,6 +80,7 @@ const App = () => {
           <Header hideheader={hideheader}>CCC</Header>
         </Link>
         <CreatorListContainer />
+        <Footer>created by hoon jeong</Footer>
       </Wrapper>
     </>
   );
