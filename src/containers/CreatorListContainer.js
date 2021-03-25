@@ -1,7 +1,12 @@
 import React, { useCallback } from 'react';
 import CreatorList from '../components/CreatorList';
 import { useSelector, useDispatch } from 'react-redux';
-import { selectAll, selectMusician, selectDeveloper } from '../modules/creator';
+import {
+  selectAll,
+  selectMusician,
+  selectDeveloper,
+  selectPainter,
+} from '../modules/creator';
 
 const CreatorListContainer = () => {
   const creators = useSelector((state) => state.creator);
@@ -16,6 +21,9 @@ const CreatorListContainer = () => {
   const onSelectDeveloper = useCallback(() => dispatch(selectDeveloper()), [
     dispatch,
   ]);
+  const onSelectPainter = useCallback(() => dispatch(selectPainter()), [
+    dispatch,
+  ]);
 
   return (
     <>
@@ -24,6 +32,7 @@ const CreatorListContainer = () => {
         onSelectAll={onSelectAll}
         onSelectMusician={onSelectMusician}
         onSelectDeveloper={onSelectDeveloper}
+        onSelectPainter={onSelectPainter}
       />
     </>
   );

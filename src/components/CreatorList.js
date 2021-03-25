@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback, useState } from 'react';
 import styled from 'styled-components';
 import Creator from './Creator';
 
@@ -45,6 +45,7 @@ const CreatorList = ({
   onSelectAll,
   onSelectDeveloper,
   onSelectMusician,
+  onSelectPainter,
 }) => {
   return (
     <Wrapper>
@@ -53,6 +54,7 @@ const CreatorList = ({
         <div onClick={onSelectAll}>All</div>
         <div onClick={onSelectMusician}>Musician</div>
         <div onClick={onSelectDeveloper}>Developer</div>
+        <div onClick={onSelectPainter}>Painter</div>
       </SelectorWrap>
       <CreatorWrap>
         {creators.map((creator) => (
