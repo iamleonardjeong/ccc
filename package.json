@@ -1,7 +1,6 @@
 {
   "name": "ccc",
   "version": "0.1.0",
-  "homepage": "https://iamleonardjeong.github.io/ccc/",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
@@ -20,16 +19,13 @@
     "styled-reset": "^4.3.4",
     "web-vitals": "^1.0.1"
   },
-  "devDependencies": {
-    "gh-pages": "^3.1.0"
-  },
+  "devDependencies": {},
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "predeply": "yarn build",
-    "deploy": "gh-pages -d build"
+    "deploy": "aws s3 sync ./build s3://iamleonardjeong-ccc --profile=iamleonardjeong"
   },
   "eslintConfig": {
     "extends": [
