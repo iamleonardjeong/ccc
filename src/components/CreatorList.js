@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import Creator from './Creator';
 
@@ -48,10 +48,17 @@ const CreatorList = ({
   onSelectPainter,
   onSelectDesigner,
 }) => {
+  const [popCard, setPopCard] = useState(false);
+  const onClick = () => {
+    setPopCard(true);
+    setTimeout(() => {
+      setPopCard(false);
+    }, 300);
+  };
   return (
     <Wrapper>
       <BodyTitle>Creator Curation for Creator</BodyTitle>
-      <SelectorWrap>
+      <SelectorWrap onClick={onClick}>
         <div onClick={onSelectAll}>All</div>
         <div onClick={onSelectMusician}>Musician</div>
         <div onClick={onSelectPainter}>Painter</div>
@@ -61,6 +68,7 @@ const CreatorList = ({
       <CreatorWrap>
         {creators.map((creator) => (
           <Creator
+            popCard={popCard}
             key={creator.id}
             name={creator.name}
             category={creator.category}

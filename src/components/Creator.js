@@ -1,7 +1,15 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
+import cn from 'classnames';
 
 const CreatorWrap = styled.div`
+  &.popCard {
+    background: white;
+    opacity: 0;
+    margin-top: 2.5rem;
+  }
+  transition: 0.5s linear;
+
   @media screen and (min-width: 1600px) {
     height: 520px;
   }
@@ -69,7 +77,7 @@ const Background = styled.div`
   }
 `;
 
-const Creator = ({ name, category, portrait }) => {
+const Creator = ({ name, category, portrait, popCard }) => {
   let closeId, openId;
 
   const eyeBlink = () => {
@@ -102,8 +110,9 @@ const Creator = ({ name, category, portrait }) => {
   if (!portrait) {
     return;
   }
+
   return (
-    <CreatorWrap>
+    <CreatorWrap className={cn({ popCard: popCard })}>
       <h1>{name}</h1>
       <h3>{category}</h3>
       <Background>
