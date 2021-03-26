@@ -3,12 +3,15 @@ import styled from 'styled-components';
 import cn from 'classnames';
 
 const CreatorWrap = styled.div`
+  &:hover {
+    box-shadow: 0 8px 6px -6px black;
+  }
   &.popCard {
-    background: white;
     opacity: 0;
     margin-top: 2.5rem;
   }
-  transition: 0.5s linear;
+  transition-property: margin-top, box-shadow, opacity;
+  transition-duration: 0.5s;
 
   @media screen and (min-width: 1600px) {
     height: 520px;

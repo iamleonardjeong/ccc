@@ -5,6 +5,8 @@ import hoon from '../images/hoon.svg';
 import gogh from '../images/gogh.svg';
 import picasso from '../images/picasso.svg';
 import diterRams from '../images/dieter_rams.svg';
+import chakaKhan from '../images/chaka_khan.svg';
+import paulaScher from '../images/paula_scher.svg';
 
 const SELECT_ALL = 'creator/SELECT_ALL';
 const SELECT_MUSICIAN = 'creator/SELECT_MUSICIAN';
@@ -25,6 +27,8 @@ const states = [
   { id: 4, name: 'Gogh', category: 'Painter', portrait: gogh },
   { id: 5, name: 'Picasso', category: 'Painter', portrait: picasso },
   { id: 6, name: 'Dieter Rams', category: 'Designer', portrait: diterRams },
+  { id: 7, name: 'Chaka Khan', category: 'Musician', portrait: chakaKhan },
+  { id: 8, name: 'Paula Scher', category: 'Designer', portrait: paulaScher },
 ];
 
 const initialState = [
@@ -34,6 +38,8 @@ const initialState = [
   { id: 4, name: 'Gogh', category: 'Painter', portrait: gogh },
   { id: 5, name: 'Picasso', category: 'Painter', portrait: picasso },
   { id: 6, name: 'Dieter Rams', category: 'Designer', portrait: diterRams },
+  { id: 7, name: 'Chaka Khan', category: 'Musician', portrait: chakaKhan },
+  { id: 8, name: 'Paula Scher', category: 'Designer', portrait: paulaScher },
 ];
 
 const creator = handleActions(
